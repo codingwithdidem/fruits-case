@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --clr-black: #060a22;
+  --clr-white: #fefefe;
+}
+
+html {
+  background: url("/images/meshes/riceflower.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
