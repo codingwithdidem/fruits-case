@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,10 +9,12 @@
   --clr-white: #fefefe;
 }
 
-html {
-  background: url("/images/meshes/riceflower.jpg");
+html,
+body {
+  background: url("/images/meshes/chestnut.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 100%;
 }
