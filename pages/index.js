@@ -31,7 +31,7 @@ export default function Home({ fruits }) {
         />
         <meta
           property="og:image"
-          content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
+          content="https://fruits-case.vercel.app/images/fruits.png"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
