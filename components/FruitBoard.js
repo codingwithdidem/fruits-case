@@ -9,7 +9,7 @@ const FruitBoard = ({ id, name, genus, family, order, nutritions }) => {
   return (
     <div
       key={id}
-      className="w-full p-4  md:p-10 h-full backdrop-blur-sm bg-white/30 rounded-lg border border-gray-200 text-gray-900 transform duration-300 shadow-2xl "
+      className="w-full p-4  md:p-10 h-full backdrop-blur-sm bg-white/30 rounded-lg  text-gray-900 transform duration-300 shadow-2xl "
     >
       <div className="flex flex-col items-start w-full">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full mb-8">
