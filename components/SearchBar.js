@@ -8,6 +8,8 @@ const SearchBar = ({ onSearch, fruits }) => {
 
   const handleFocus = () => {
     clickPoint.current.style.display = "none";
+
+    setOpen(true);
   };
 
   const handleBlur = () => {
@@ -17,6 +19,11 @@ const SearchBar = ({ onSearch, fruits }) => {
   const onKeyPress = (e) => {
     if (searchTerm !== "" && e.key === "Enter") {
       onSearch(searchTerm);
+
+      setSearchTerm("");
+
+      // Hide List
+      setOpen(false);
     }
   };
 
@@ -72,6 +79,8 @@ const SearchBar = ({ onSearch, fruits }) => {
                 onClick={() => {
                   setSearchTerm(fruit.name);
                   onSearch(fruit.name);
+
+                  setSearchTerm("");
 
                   // Hide the list
                   setOpen(false);

@@ -16,7 +16,7 @@ export default function Home({ fruits }) {
   };
 
   return (
-    <div className="relative h-screen w-full font-poppins">
+    <div className="relative h-screen w-full font-poppins bg-[url('/images/meshes/riceflower.jpg')] bg-cover bg-no-repeat">
       <Head>
         <title>Fruits Center</title>
         <meta name="description" content="Learn about fruits of the world." />
