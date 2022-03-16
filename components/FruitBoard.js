@@ -21,7 +21,7 @@ const FruitBoard = ({ id, name, genus, family, order, nutritions }) => {
             <p className="text-lg sm:text-xl">({nutritions.calories} kcal)</p>
           </div>
 
-          <div class="grid grid-col-1 sm:grid-cols-3 divide-y sm:divide-x divide-purple-400 bg-purple-600 text-gray-200 rounded-lg text-sm font-mono mt-8 md:mt-0">
+          <div className="grid grid-col-1 sm:grid-cols-3 divide-y sm:divide-x divide-purple-400 bg-purple-600 text-gray-200 rounded-lg text-sm font-mono mt-8 md:mt-0">
             <div className="px-4 md:px-6 py-3 sm:py-2 flex items-center justify-center ">
               <p className="flex flex-col space-y-3">
                 <span className="underline uppercase">Genus</span>
