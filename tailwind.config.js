@@ -11,8 +11,8 @@ module.exports = {
         poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        "brand-black": "var(--brand-black)",
-        "brand-white": "var(--brand-white)",
+        "brand-black": "var(--clr-black)",
+        "brand-white": "var(--clr-white)",
       },
     },
   },
