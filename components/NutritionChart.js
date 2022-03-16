@@ -3,12 +3,48 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import * as am5exporting from "@amcharts/amcharts5/plugins/exporting";
+import am5themes_Responsive from "@amcharts/amcharts5/themes/Responsive";
 
 const NutritionChart = ({ nutritions }) => {
   useLayoutEffect(() => {
     let root = am5.Root.new("chartdiv");
 
-    root.setThemes([am5themes_Animated.new(root)]);
+    let responsive = am5themes_Responsive.newEmpty(root);
+
+    responsive.addRule({
+      relevant: am5themes_Responsive.widthL,
+      applying: function () {
+        chart.set("layout", root.verticalLayout);
+
+        series.labels.template.set("visible", false);
+        series.ticks.template.set("visible", false);
+
+        legend.setAll({
+          y: null,
+          centerY: null,
+          x: am5.percent(30),
+          centerX: am5.p0,
+          marginTop: 30,
+        });
+      },
+      removing: function () {
+        chart.set("layout", root.horizontalLayout);
+
+        series.labels.template.set("visible", true);
+        series.ticks.template.set("visible", true);
+
+        legend.setAll({
+          y: am5.p50,
+          centerY: am5.p50,
+          x: null,
+          centerX: null,
+        });
+      },
+    });
+
+    root.setThemes([am5themes_Animated.new(root), responsive]);
+
+    // root.setThemes([am5themes_Responsive.new(root)]);
 
     var chart = root.container.children.push(
       am5percent.PieChart.new(root, {
@@ -72,7 +108,7 @@ const NutritionChart = ({ nutritions }) => {
         y: am5.percent(50),
         centerY: am5.percent(50),
         paddingRight: 20,
-        paddingLeft: 60,
+        paddingLeft: 20,
       })
     );
 
@@ -84,22 +120,6 @@ const NutritionChart = ({ nutritions }) => {
     });
 
     legend.data.setAll(series.dataItems);
-
-    chart.children.unshift(
-      am5.Label.new(root, {
-        text: `${nutritions.calories} kcal`,
-        fontSize: 18,
-        fontWeight: "500",
-        textAlign: "center",
-        x: am5.percent(50),
-        centerX: am5.percent(180),
-        y: am5.percent(50),
-        centerY: am5.percent(50),
-        paddingTop: 0,
-        paddingBottom: 0,
-      })
-    );
-
     // Export
 
     let exporting = am5exporting.Exporting.new(root, {
@@ -111,7 +131,7 @@ const NutritionChart = ({ nutritions }) => {
     };
   }, []);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "360px" }}></div>;
+  return <div id="chartdiv" className="w-full h-[330px] "></div>;
 };
 
 export default NutritionChart;

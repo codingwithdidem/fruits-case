@@ -16,7 +16,7 @@ export default function Home({ fruits }) {
   };
 
   return (
-    <div className="relative h-screen w-full font-poppins bg-[url('/images/meshes/riceflower.jpg')] bg-cover bg-no-repeat">
+    <div className="relative min-h-screen w-full font-poppins bg-[url('/images/meshes/riceflower.jpg')] bg-cover bg-no-repeat">
       <Head>
         <title>Fruits Center</title>
         <meta name="description" content="Learn about fruits of the world." />
@@ -41,8 +41,8 @@ export default function Home({ fruits }) {
         alt="blueberry"
       />
 
-      <main className="w-full h-full px-4 mx-auto text-center py-10">
-        <h1 className="text-brand-black font-semibold uppercase text-lg sm:text-3xl md:text-4xl mx-auto">
+      <main className="w-full h-full px-4 mx-auto text-center py-6">
+        <h1 className="text-brand-black font-semibold uppercase text-2xl md:text-4xl mx-auto w-full">
           Fruits Center
         </h1>
 
@@ -52,7 +52,7 @@ export default function Home({ fruits }) {
 
         <SearchBar onSearch={onSearch} fruits={fruits} />
 
-        <div className="max-w-5xl mx-auto h-[560px]  py-6">
+        <div className="max-w-5xl mx-auto h-full  py-6">
           {fruit && <FruitBoard {...fruit} />}
         </div>
       </main>

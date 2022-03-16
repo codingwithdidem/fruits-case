@@ -30,8 +30,8 @@ const SearchBar = ({ onSearch, fruits }) => {
   );
 
   return (
-    <div className="relative flex items-center px-4 justify-center">
-      <div className="relative mr-3 ">
+    <div className="relative flex items-center px-4 justify-center w-full">
+      <div className="relative">
         <div className="absolute top-3 left-3 items-center">
           <svg
             className="w-5 h-5 text-gray-500"
@@ -48,7 +48,7 @@ const SearchBar = ({ onSearch, fruits }) => {
         </div>
         <input
           type="text"
-          className="outline-none block p-2 pl-10 w-[450px] text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300"
+          className="outline-none block p-2 pl-10 w-full md:w-[450px] text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300"
           placeholder="Search fruits ..."
           value={searchTerm}
           onChange={(e) => {
@@ -63,7 +63,7 @@ const SearchBar = ({ onSearch, fruits }) => {
       {/* Expand List */}
       <div
         className={`${open ? "block" : "hidden"}
-                z-10 overflow-scroll absolute top-12 w-[440px] -ml-2 rounded-lg max-h-[250px] bg-white`}
+                z-10 overflow-scroll absolute top-12 w-full w-[440px] -ml-2 rounded-lg max-h-[250px] bg-white`}
       >
         <ul>
           {filteredFruits.map((fruit) => (
