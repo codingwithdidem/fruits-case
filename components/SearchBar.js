@@ -1,29 +1,27 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const SearchBar = ({ onSearch, fruits }) => {
-  const clickPoint = useRef();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [open, setOpen] = useState(false);
 
   const handleFocus = () => {
-    clickPoint.current.style.display = "none";
-
     setOpen(true);
-  };
-
-  const handleBlur = () => {
-    clickPoint.current.style.display = "block";
   };
 
   const onKeyPress = (e) => {
     if (searchTerm !== "" && e.key === "Enter") {
-      onSearch(searchTerm);
+      if (
+        fruits.find(
+          (fruit) => fruit.name.toLowerCase() === searchTerm.toLowerCase()
+        )
+      ) {
+        onSearch(searchTerm);
 
-      setSearchTerm("");
+        setSearchTerm("");
 
-      // Hide List
-      setOpen(false);
+        // Hide List
+        setOpen(false);
+      }
     }
   };
 
@@ -34,7 +32,7 @@ const SearchBar = ({ onSearch, fruits }) => {
   return (
     <div className="relative flex items-center px-4 justify-center">
       <div className="relative mr-3 ">
-        <div className="absolute top-3 left-3 items-center" ref={clickPoint}>
+        <div className="absolute top-3 left-3 items-center">
           <svg
             className="w-5 h-5 text-gray-500"
             fill="currentColor"
@@ -50,7 +48,7 @@ const SearchBar = ({ onSearch, fruits }) => {
         </div>
         <input
           type="text"
-          className="outline-none block p-2 pl-10 w-[450px] text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:pl-3 "
+          className="outline-none block p-2 pl-10 w-[450px] text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300"
           placeholder="Search fruits ..."
           value={searchTerm}
           onChange={(e) => {
@@ -59,7 +57,6 @@ const SearchBar = ({ onSearch, fruits }) => {
           }}
           onKeyPress={onKeyPress}
           onFocus={handleFocus}
-          onBlur={handleBlur}
         />
       </div>
 
