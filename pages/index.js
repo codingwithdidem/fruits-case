@@ -20,6 +20,19 @@ export default function Home({ fruits }) {
       <Head>
         <title>Fruits Center</title>
         <meta name="description" content="Learn about fruits of the world." />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="https://fruits-case.vercel.app/" />
+        <meta name="twitter:creator" content="@DidemKkkaraasl1" />
+        <meta property="og:url" content="https://fruits-case.vercel.app/" />
+        <meta property="og:title" content="Fruits Center" />
+        <meta
+          property="og:description"
+          content="See what fruits are available in the world and learn about their nutritional value."
+        />
+        <meta
+          property="og:image"
+          content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
