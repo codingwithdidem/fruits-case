@@ -63,7 +63,7 @@ const SearchBar = ({ onSearch, fruits }) => {
       {/* Expand List */}
       <div
         className={`${open ? "block" : "hidden"}
-                z-10 overflow-scroll absolute top-12 w-full w-[440px] -ml-2 rounded-lg max-h-[250px] bg-white`}
+                z-10 overflow-scroll absolute top-12 w-full md:w-[440px] -ml-2 rounded-lg max-h-[250px] bg-white`}
       >
         <ul>
           {filteredFruits.map((fruit) => (
