@@ -65,7 +65,7 @@ export default function Home({ fruits }) {
 
         <SearchBar onSearch={onSearch} fruits={fruits} />
 
-        <div className="max-w-5xl mx-auto h-full  py-6">
+        <div className="max-w-3xl md:max-w-5xl 2xl:max-w-6xl mx-auto h-full  py-6">
           {fruit && <FruitBoard {...fruit} />}
         </div>
       </main>
